@@ -1,11 +1,12 @@
 import './App.css';
-import { NewHomes, NavBar, MarketingFooter } from './ui-components'
+import { NavBar, MarketingFooter } from './ui-components'
+import { Map } from './map.js'
 
 function App() {
 	return (
 		<div className="App">
 		<NavBar />
-		<NewHomes />
+		<Map />
 		<MarketingFooter />
 		</div>
 	);
