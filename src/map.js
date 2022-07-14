@@ -19,6 +19,7 @@ export function Map( props ) {
 		if( a.timestamp < b.timestamp ){ return -1 }
 		else { return 1 }
 	});
+	console.log( items );
 	
 	return (
 		<LoadScript googleMapsApiKey="AIzaSyDALir4t4GN6zxvz7eCJOocw2_r12d4w1U">
