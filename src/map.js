@@ -13,7 +13,9 @@ const center = {
 };
 
 export function Map( props ) {
-	const items = useDataStoreBinding({ type: "collection", model: Pos }).items.sort( function( a, b ){
+	const { items: itemsProp } = props;
+	const itemsDataStore = useDataStoreBinding({ type: "collection", model: Pos }).items;
+	const items = ( itemsProp !== undefined ? itemsProp : itemsDataStore ).sort( function( a, b ){
 		if( a.timestamp < b.timestamp ){ return -1 }
 		else { return 1 }
 	});
