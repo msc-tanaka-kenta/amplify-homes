@@ -15,7 +15,10 @@ const center = {
 export function Map( props ) {
 	const { items: itemsProp } = props;
 	const itemsDataStore = useDataStoreBinding({ type: "collection", model: Pos }).items;
-	const items = itemsProp !== undefined ? itemsProp : itemsDataStore;
+	const items = ( itemsProp !== undefined ? itemsProp : itemsDataStore ).sort( function( a, b ){
+		if( a.timestamp < b.timestamp ){ return -1 }
+		else { return 1 }
+	});
 	
 	return (
 		<LoadScript googleMapsApiKey="AIzaSyDALir4t4GN6zxvz7eCJOocw2_r12d4w1U">
